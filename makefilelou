@@ -1,0 +1,8 @@
+doctor: doctor.o main.o
+	gcc doctor.o main.o -o doctor -g
+
+main.o: main.c
+	gcc -c main.c -g
+
+doctor.o: doctor.c
+	gcc -c doctor.c -g
