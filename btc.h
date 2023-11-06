@@ -16,10 +16,10 @@ typedef struct
 } btc;
 int is_numeric(const char *chaine);
 int isAllNonDigits( const char *str);
-int Add(char *filename, char *ID, btc b);
-int Modify(char *filename, char *ID, btc New);
-int Delete(char *filename, char *ID);
-btc Search(char *filename, char *ID);
+int Add(char *filename, btc b);
+int Modify(char *filename, char ID[], btc New);
+int Delete(char *filename, char ID[]);
+btc Search(char *filename, char ID[]);
 
 
 #endif // BTC_H_INCLUDED
