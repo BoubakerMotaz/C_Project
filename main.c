@@ -1,49 +1,42 @@
 #include <stdio.h>
 #include <string.h>
-#include "btc.h"
+#include "user.h"
 
 int main()
 {
-    btc b1= {"34647836","Manouba",1,"manoubabtc@gmail.com","90340111","rue de carthage",5,{0,0},{1,1}},b2= {"34567836","Ariana",2,"arianaabtc@gmail.com","90340112","rue de republic",10,{1,1},{1,0}},b3;
-    int x=Add("btc.txt", b1);
-    
-    if(x==1)
-	{
-        printf("\n Adding successful");
-	}
+    struct User user1 = {"motaz", "123456", "123456", "14404462", "motaz", "boubaker", "motazboubaker48@gmail.com", "1234567890", "Specialization", 19900101, 0, 1, 5, 1};
+
+     struct User user2 = {"mohamed", "4567898", "4567898", "1425687", "mohamed", "boubaker", "mohamedboubaker48@gmail.com", "1234567890", "Specialization 2", 19900101, 0, 1, 5, 1};
+
+    int x = addUser("user.txt", user1);
+
+    if (x == 1)
+        printf("\nUser added successfully");
     else
-	{
-	printf("\n Error adding");
-	}
-        
-    x=Modify("btc.txt","34567836",b2 );
+        printf("\nFailed to add user");
 
-    if(x==1)
-	{
-        printf("\n Modification successful");
-	}
-    else 
-	{
-	printf("\n Error Modification");
-	} 
-   
-    x=Delete("btc.txt","34647836" );
+         //x = addUser("user.txt", user2);
 
-    if(x==1)
-	{
-        printf("\n Deleteion successful");
-	}
-    else 
-	{
-	printf("\n Error deletion");
-	}
+    struct User newUser = {"ahmed", "654321", "654321", "14636254", "ahmed", "boubaker", "ahmedboubaker@example.com", "9876543210", "New Specialization", 19851205, 0, 1, 8, 1};
 
-    b3=Search("btc.txt","2345678");
 
-    if(strcmp(b3.ID,"") == 0 )
-	{
-        printf("\n Not found");
-	}
+    x = modifyUser("user.txt", "motaz", newUser);
+    if (x == 1)
+        printf("\nUser modified successfully");
+    else
+        printf("\nFailed to modify user");
+
+    x = removeUser("user.txt", "motaz");
+    if (x == 1)
+        printf("\nUser removed successfully");
+    else
+        printf("\nFailed to remove user");
+
+    struct User foundUser = searchUser("user.txt", "ahmed");
+    if (strcmp(foundUser.username, "Not Found") == 0)
+        printf("\nUser not found");
+    else
+        printf("\nUser found: %s", foundUser.username);
 
     return 0;
 }
