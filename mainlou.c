@@ -3,8 +3,8 @@
 #include "doctor.h"
 
 int main() {
-    doctor d1 = {"123", "louey barouni", "o", "+", "", "200", "123", {0, 1, 1, 1}};
-    doctor d2 = {"111", "lala baba", "b", "-", "250", "01", {1, 1, 1, 1}};
+    doctor d1 = {"123", "louey barouni", "o", 0 , "", "200", "123", {0, 1, 1, 1}};
+    doctor d2 = {"111", "lala baba", "b", 1 , "250", "01", {1, 1, 1, 1}};
     doctor d3;
 
     int x = add("doctor.txt", d1);
