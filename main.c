@@ -42,7 +42,7 @@ int main()
 
     if(strcmp(b3.ID,"") == 0 )
 	{
-        printf("Not found");
+        printf("\n Not found");
 	}
 
     return 0;
