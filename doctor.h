@@ -8,7 +8,7 @@ typedef struct
     char CIN[8];
     char Fullname[20];
     char BloodType[20];
-    char sign[10];
+    int sign;
     char BTC[20];
     int Quantity;
     char DonationID[20];
@@ -23,4 +23,3 @@ int isNumerical(const char *input);
 int isAlphabetic(const char *input);
 
 #endif // DOCTOR_H_INCLUDED
-
